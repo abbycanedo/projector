@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 0.05em;
+	background-color: #DCDCDC;
+}
+
+label, input{
+	display: block;
+}
+
+
+.global{
+	font-size: 0.85em;
+	background-color: #0099ff;
+	color: #ffffff;
+	padding: 15px;
+}
+
+.global span{
+	font-weight: bolder;
+	float: right;
+}

@@ -1,0 +1,45 @@
+label, input{
+	display: block;
+}
+
+header{
+	font-size: 0px;
+	text-align: center;
+	background-image: url('logo.png');
+	background-repeat: no-repeat;
+	width: 500px;
+	height: 117px;
+	margin: auto;
+	margin-top: 10%;
+}
+
+form{
+	background-color: #FFFFFF;
+	width: 300px;
+	padding: 30px 60px 30px 60px;
+	margin: auto;
+	text-align: center;
+}
+
+label{
+	margin-bottom: 5px;
+	color: #666666;
+}
+
+input{
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 92%;
+}
+
+button{
+	padding: 10px;
+	background-color: #FF9900;
+	border: 0px;
+	color: #FFFFFF;
+	width: 100%;
+}
+
+button:hover{
+	background-color: #FF8F33;
+}
