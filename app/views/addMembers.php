@@ -43,16 +43,15 @@
 				<section class="left">
 					<label for='code'>Current Members</label>
 					<div class="members_view">
-						<ul>
+						<ul class="members_list">
 							{% for mem in members %}
 								<li>
 									<button title="Delete User" class="delete">x</button>
 									<span>{{mem.firstname}} {{mem.lastname}}</span>
 									<input type="hidden" id="member_id" name="member_id" value="{{mem.id}}">
-									
 								</li>
 							{% else %}
-								<li> No members found. </li>
+								<li id="empty"> No members found. </li>
 							{% endfor %}
 						</ul>
 					</div>

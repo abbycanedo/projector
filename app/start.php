@@ -42,15 +42,15 @@ require 'routes.php';
 $app->auth = false;
 
 $app->container->set('user', function(){
-	return new User;
+	return new User();
 });
 
 $app->container->set('project', function(){
-	return new Project;
+	return new Project();
 });
 
 $app->container->set('project_user', function(){
-	return new ProjectUser;
+	return new ProjectUser();
 });
 
 $app->container->singleton('hash', function() use ($app){

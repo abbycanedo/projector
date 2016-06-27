@@ -38,7 +38,7 @@ $app->post('/projects/assignments/:projectId', $authenticated(), function($proje
 			$app->flash('global', 'Error! Make sure input is correct.');
 		} else{
 			$app->project_user->create([
-				'project_id' => $id,
+				'project_id' => $id, 
 				'user_id' => $new_member
 			]);
 			$app->flash('global', 'User successfully added!');

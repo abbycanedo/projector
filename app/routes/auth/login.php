@@ -24,10 +24,9 @@ $app->post('/signin', $guest(), function() use ($app){
 			$_SESSION[$app->config->get('auth.session')] = $user->id;
 			$app->flash('global', 'You are now logged in!');
 			$app->redirect($app->urlFor('dashboard'));
-		} else{
-			$app->flash('global', 'Error logging in! Make sure all input is correct or user exists.');
-			$app->redirect($app->urlFor('login'));
 		}
+		$app->flash('global', 'Error logging in! Make sure all input is correct or user exists.');
+		$app->redirect($app->urlFor('login'));
 	}
 
 })->name('login.post');

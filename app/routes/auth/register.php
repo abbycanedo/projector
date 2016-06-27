@@ -17,8 +17,8 @@ $app->post('/persons/create', $authenticated(), function() use ($app){
 	$v = $app->validation;
 
 	$v->validate([
-		'firstname' => [$username, 'required|min(2)|max(50)|alpha'],
-		'lastname' => [$lastname, 'required|min(2)|max(50)|alpha'],
+		'firstname' => [$username, 'required|min(2)|max(50)'],
+		'lastname' => [$lastname, 'required|min(2)|max(50)'],
 		'username' => [$username, 'required|email|min(5)|max(200)|uniqueEmail'],
 		'password' => [$password, 'required|min(7)|max(11)'],
 		'password_confirm' => [$passwordConfirm, 'required|matches(password)']
