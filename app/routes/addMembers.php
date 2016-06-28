@@ -30,23 +30,20 @@ $app->get('/projects/assignments/:projectId', $authenticated(), function($projec
 
 $app->post('/projects/assignments/:projectId', $authenticated(), function($projectId) use ($app){
 	$action = $_POST['action'];
-	if ($action==='add') {
+	if ($action=='add') {
 		$new_member = $_POST['new_member'];
 		$id = $_POST['project_id'];
 
-		if ($new_member==='null'){
-			$app->flash('global', 'Error! Make sure input is correct.');
-		} else{
-			$app->project_user->create([
-				'project_id' => $id, 
-				'user_id' => $new_member
-			]);
-			$app->flash('global', 'User successfully added!');
-		}
-	} elseif ($action==='delete') {
+		$app->project_user->create([
+			'project_id' => $id, 
+			'user_id' => $new_member
+		]);
+		
+	} elseif ($action=='delete') {
 		$member = $_POST['member_id'];
 		$id = $_POST['project_id'];
 		$app->project_user->where('project_id', $id)->where('user_id', $member)->delete();
-		$app->flash('global', 'User successfully deleted!');
+//		$app->flash('global', 'User successfully deleted!');
 	}
+
 })->name('addMembers.post');

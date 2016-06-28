@@ -25,8 +25,9 @@ $app->post('/signin', $guest(), function() use ($app){
 			$app->flash('global', 'You are now logged in!');
 			$app->redirect($app->urlFor('dashboard'));
 		}
-		$app->flash('global', 'Error logging in! Make sure all input is correct or user exists.');
-		$app->redirect($app->urlFor('login'));
 	}
+
+	$app->flash('global', 'Error logging in! Make sure all input is correct or user exists.');
+	$app->redirect($app->urlFor('login'));
 
 })->name('login.post');

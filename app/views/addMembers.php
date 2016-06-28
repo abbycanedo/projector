@@ -46,9 +46,9 @@
 						<ul class="members_list">
 							{% for mem in members %}
 								<li>
-									<button title="Delete User" class="delete">x</button>
+									<button title="Delete User" value="{{mem.id}}" class="delete">x</button>
 									<span>{{mem.firstname}} {{mem.lastname}}</span>
-									<input type="hidden" id="member_id" name="member_id" value="{{mem.id}}">
+									<input type="hidden" id="{{mem.id}}" value="{{mem.id}}" name="{{mem.firstname}} {{mem.lastname}}"></input>
 								</li>
 							{% else %}
 								<li id="empty"> No members found. </li>
@@ -64,7 +64,7 @@
 									{{user.firstname}} {{user.lastname}}
 								</option>
 							{% else %}
-								<option disabled>No users available</option>
+								<option disabled class="empty_options">No users available</option>
 							{% endfor %}
 					</select>
 					<input type="hidden" id="project_id" name="project_id" value="{{project.id}}">
